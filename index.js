@@ -16,8 +16,8 @@ app.get('/' , (req,res)=>{
   res.send('hello nodes1-app API')
 })
 
-  const PORT = process.env.PORT || 5000
+  const Port = process.env.PORT || 5000
 
-app.listen(PORT,()=>{
-    console.log("connected on port 5000")
+app.listen(Port,()=>{
+    console.log("connected on port" + Port)
 })
