@@ -1,7 +1,7 @@
 const corsAllow = (req, res, next) => {
     const corsWhitelist = [
         'http://localhost:3000',
-        'http://localhost:3001',
+        'https://nodes2-app.herokuapp.com',
         'https://aidatabases.in'
     ];
     if (corsWhitelist.indexOf(req.headers.origin) !== -1) {
