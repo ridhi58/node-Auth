@@ -22,7 +22,8 @@ router.post('/login' , async(req,res)=>{
         
         const user = await User.findByCredentials(req.body.email , req.body.password)   
         const token = await user.generateAuthToken()  
-        req.session.user = token      
+        req.session.user = token 
+        console.log(token)     
         res.cookie("cookie-key","cookie-value",{
                   maxAge:10000*60
         })      

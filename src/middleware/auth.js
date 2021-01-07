@@ -4,9 +4,9 @@ const jwt = require('jsonwebtoken')
 
 const auth = async(req,res,next)=>{
 try{
-
+console.log('hit')
 const token = req.session.user 
-
+console.log(token)
 
 const decode = jwt.verify(token,process.env.JWT_TOKEN)
 
