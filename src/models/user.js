@@ -52,7 +52,7 @@ userSchema.statics.findByCredentials = async function(email,password){
         throw new Error("unable to login")
     }
     return user
-}
+
 
 }
 const User = mongoose.model('Practuser',userSchema)
