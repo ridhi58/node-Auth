@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start":"node index.js"
-    
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +18,7 @@
     "express-session": "^1.17.1",
     "ioredis": "^4.19.4",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.11.9"
+    "mongoose": "^5.11.9",
+    "redis": "^3.0.2"
   }
 }

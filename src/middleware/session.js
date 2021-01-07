@@ -18,7 +18,7 @@ module.exports = session({
     cookie:{
         maxAge:10000*60,
         sameSite:true,
-        secure:false,
+        secure:true,
         domain:'localhost'
     }
 })

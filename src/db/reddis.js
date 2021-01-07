@@ -1,4 +1,4 @@
-const redis = require('ioredis')
+const redis = require('redis')
 
 const redisclient = redis.createClient(process.env.REDIS_PORT, process.env.REDIS_IP)
 // const redisclient = redis.createClient({
