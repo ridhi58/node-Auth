@@ -19,6 +19,8 @@ const userSchema = new mongoose.Schema(
         ]
      }
 )
+
+const User = mongoose.model('Practuser',userSchema)
 userSchema.pre('save', async function (next) {
     const user = this
 
@@ -59,5 +61,5 @@ catch(e){
 }
 
 }
-const User = mongoose.model('Practuser',userSchema)
+
 module.exports = User
