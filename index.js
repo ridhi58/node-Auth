@@ -1,12 +1,13 @@
 
 const express = require('express')
+const dotenv = require('dotenv')
+dotenv.config()
 require('./src/db/mongo')
 const corsAllow = require('./src/config/corsAllow')
-const dotenv = require('dotenv')
 
 const userRoute = require('./src/routes/userRoute')
 const app = express()
-dotenv.config()
+
 app.use(express.json())
 app.use(corsAllow)
 
