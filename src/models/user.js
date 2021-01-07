@@ -19,8 +19,6 @@ const userSchema = new mongoose.Schema(
         ]
      }
 )
-
-const User = mongoose.model('Practuser',userSchema)
 userSchema.pre('save', async function (next) {
     const user = this
 
@@ -39,8 +37,8 @@ userSchema.methods.generateAuthToken = async function(){
 
     return token
 }
-userSchema.statics.findByCredentials = async(email,password)=>{
-    try{
+userSchema.statics.findByCredentials = async function(email,password){
+   
     const user = await User.findOne({email})
     
     if(!user)
@@ -56,10 +54,6 @@ userSchema.statics.findByCredentials = async(email,password)=>{
     return user
 }
 
-catch(e){
-    console.log(e)
 }
-
-}
-
+const User = mongoose.model('Practuser',userSchema)
 module.exports = User
