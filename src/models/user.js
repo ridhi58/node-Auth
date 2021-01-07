@@ -30,15 +30,21 @@ userSchema.pre('save', async function (next) {
 })
 
 userSchema.methods.generateAuthToken = async function(){
+    try{
     const user = this
     const token = jwt.sign({_id: user._id.toString() },process.env.JWT_TOKEN)
     user.tokens = user.tokens.concat({ token })
     await user.save()
 
     return token
+    }
+    catch(e)
+    {
+        console.log(e)
+    }
 }
 userSchema.statics.findByCredentials = async function(email,password){
-   
+   try{
     const user = await User.findOne({email})
     
     if(!user)
@@ -52,7 +58,11 @@ userSchema.statics.findByCredentials = async function(email,password){
         throw new Error("unable to login")
     }
     return user
-
+}
+catch(e)
+{
+    console.log(e)
+}
 
 }
 const User = mongoose.model('Practuser',userSchema)
