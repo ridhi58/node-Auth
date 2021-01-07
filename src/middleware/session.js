@@ -19,7 +19,7 @@ module.exports = session({
         maxAge:10000*60,
         sameSite:true,
         secure:true,
-        domain:'localhost'
+        // domain:'localhost'
     }
 })
 
