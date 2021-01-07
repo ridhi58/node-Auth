@@ -2,6 +2,7 @@ const mongoose = require('mongoose')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 
+
 const userSchema = new mongoose.Schema(
     {
         name:{type:String,},
@@ -37,6 +38,7 @@ userSchema.methods.generateAuthToken = async function(){
     return token
 }
 userSchema.statics.findByCredentials = async(email,password)=>{
+    try{
     const user = await User.findOne({email})
     
     if(!user)
@@ -50,6 +52,12 @@ userSchema.statics.findByCredentials = async(email,password)=>{
         throw new Error("unable to login")
     }
     return user
+}
+
+catch(e){
+    console.log(e)
+}
+
 }
 const User = mongoose.model('Practuser',userSchema)
 module.exports = User
