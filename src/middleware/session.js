@@ -18,8 +18,8 @@ module.exports = session({
     cookie:{
         maxAge:10000*60,
         sameSite:true,
-        secure:true,
-        domain:'herokuapp.com'
+        secure:false,
+        domain:'localhost'
     }
 })
 
